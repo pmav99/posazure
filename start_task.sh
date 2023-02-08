@@ -55,6 +55,6 @@ sudo mkdir -p /blob
 sudo mount -t nfs -o vers=3,rsize=1048576,wsize=1048576,hard,nolock,proto=tcp,nconnect=8 sabatchd75dposeidondev.blob.core.windows.net:/sabatchd75dposeidondev/test-nfs /blob
 sudo chmod o+rx /blob
 sudo mkdir -p /blob/pool_output
-sudo chown batchadmin:batchadmin /blob/pool_output
+sudo chown $(id -u):$(id -g) /blob/pool_output
 
 log "END of START_TASK"
