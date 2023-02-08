@@ -7,8 +7,9 @@ vars:
 
 tasks:
   default:
+    desc: "List available tasks"
     cmds:
-      - echo "{{.GREETING}}"
+      - "task --list-all"
     silent: true
 
   deploy_pool:
