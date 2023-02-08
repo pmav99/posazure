@@ -1,0 +1,107 @@
+{
+  "allocationState": "steady",
+  "allocationStateTransitionTime": "2023-02-07T23:57:08.643042+00:00",
+  "applicationLicenses": null,
+  "applicationPackageReferences": null,
+  "autoScaleEvaluationInterval": null,
+  "autoScaleFormula": null,
+  "autoScaleRun": null,
+  "certificateReferences": null,
+  "cloudServiceConfiguration": null,
+  "creationTime": "2023-02-07T23:05:18.808635+00:00",
+  "currentDedicatedNodes": 0,
+  "currentLowPriorityNodes": 0,
+  "currentNodeCommunicationMode": null,
+  "displayName": null,
+  "eTag": "0x8DB0966CA838954",
+  "enableAutoScale": false,
+  "enableInterNodeCommunication": true,
+  "id": "test_pool_users",
+  "identity": null,
+  "lastModified": "2023-02-07T23:55:29.198933+00:00",
+  "metadata": null,
+  "mountConfiguration": null,
+  "networkConfiguration": {
+    "dynamicVnetAssignmentScope": "none",
+    "endpointConfiguration": null,
+    "publicIpAddressConfiguration": {
+      "ipAddressIds": null,
+      "provision": "nopublicipaddresses"
+    },
+    "subnetId": "/subscriptions/7bc94fc6-8e36-4346-b7f3-915ea163e314/resourceGroups/rg-poseidon-dev/providers/Microsoft.Network/virtualNetworks/vnet/subnets/compute"
+  },
+  "resizeErrors": null,
+  "resizeTimeout": "0:15:00",
+  "startTask": {
+    "commandLine": "/bin/bash /tmp/start_task.sh",
+    "containerSettings": null,
+    "environmentSettings": [
+      {
+        "name": "CUSTOM_VARIABLE",
+        "value": "111"
+      }
+    ],
+    "maxTaskRetryCount": 0,
+    "resourceFiles": [
+      {
+        "autoStorageContainerName": null,
+        "blobPrefix": null,
+        "fileMode": "755",
+        "filePath": "/tmp/start_task.sh",
+        "httpUrl": "https://raw.githubusercontent.com/pmav99/posazure/master/start_task.sh",
+        "identityReference": null,
+        "storageContainerUrl": null
+      }
+    ],
+    "userIdentity": {
+      "autoUser": {
+        "elevationLevel": "admin",
+        "scope": "pool"
+      },
+      "userName": null
+    },
+    "waitForSuccess": true
+  },
+  "state": "active",
+  "stateTransitionTime": "2023-02-07T23:05:18.808635+00:00",
+  "stats": null,
+  "targetDedicatedNodes": 0,
+  "targetLowPriorityNodes": 0,
+  "targetNodeCommunicationMode": "simplified",
+  "taskSchedulingPolicy": {
+    "nodeFillType": "pack"
+  },
+  "taskSlotsPerNode": 1,
+  "url": "https://batchd75dposeidondev.westeurope.batch.azure.com/pools/test_pool_users",
+  "userAccounts": [
+    {
+      "elevationLevel": "admin",
+      "linuxUserConfiguration": null,
+      "name": "batchadmin",
+      "password": null,
+      "windowsUserConfiguration": null
+    }
+  ],
+  "virtualMachineConfiguration": {
+    "containerConfiguration": null,
+    "dataDisks": null,
+    "diskEncryptionConfiguration": null,
+    "extensions": null,
+    "imageReference": {
+      "exactVersion": null,
+      "offer": "ubuntu-hpc",
+      "publisher": "microsoft-dsvm",
+      "sku": "2004",
+      "version": "latest",
+      "virtualMachineImageId": null
+    },
+    "licenseType": null,
+    "nodeAgentSkuId": "batch.node.ubuntu 20.04",
+    "nodePlacementConfiguration": {
+      "policy": "regional"
+    },
+    "osDisk": null,
+    "windowsConfiguration": null
+  },
+  "vmSize": "standard_hb120rs_v3"
+}
