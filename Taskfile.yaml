@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  deploy_pool:
+    desc: "Deploy the pool using the json template"
+    cmds:
+      - "az batch pool set --pool-id test_pool_users --json-file <(yasha templates/pool.json.j2 -o -)"

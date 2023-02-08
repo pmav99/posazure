@@ -1,6 +1,8 @@
 {
   "allocationState": "steady",
+  {#
   "allocationStateTransitionTime": "2023-02-07T23:57:08.643042+00:00",
+  #}
   "applicationLicenses": null,
   "applicationPackageReferences": null,
   "autoScaleEvaluationInterval": null,
@@ -8,17 +10,23 @@
   "autoScaleRun": null,
   "certificateReferences": null,
   "cloudServiceConfiguration": null,
+  {#
   "creationTime": "2023-02-07T23:05:18.808635+00:00",
+  #}
   "currentDedicatedNodes": 0,
   "currentLowPriorityNodes": 0,
   "currentNodeCommunicationMode": null,
   "displayName": null,
+  {#
   "eTag": "0x8DB0966CA838954",
+  #}
   "enableAutoScale": false,
   "enableInterNodeCommunication": true,
   "id": "test_pool_users",
   "identity": null,
+  {#
   "lastModified": "2023-02-07T23:55:29.198933+00:00",
+  #}
   "metadata": null,
   "mountConfiguration": null,
   "networkConfiguration": {
@@ -37,6 +45,10 @@
     "containerSettings": null,
     "environmentSettings": [
       {
+        "name": "GIT_HASH",
+        "value": "{{ 'git rev-parse --short --verify HEAD' | shell }}"
+      },
+      {
         "name": "CUSTOM_VARIABLE",
         "value": "111"
       }
@@ -50,7 +62,9 @@
     "waitForSuccess": true
   },
   "state": "active",
+  {#
   "stateTransitionTime": "2023-02-07T23:05:18.808635+00:00",
+  #}
   "stats": null,
   "targetDedicatedNodes": 0,
   "targetLowPriorityNodes": 0,
