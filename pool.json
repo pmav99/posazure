@@ -54,11 +54,8 @@
       }
     ],
     "userIdentity": {
-      "autoUser": {
-        "elevationLevel": "admin",
-        "scope": "pool"
-      },
-      "userName": null
+      "autoUser": null,
+      "userName": "batchadmin"
     },
     "waitForSuccess": true
   },
