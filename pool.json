@@ -33,7 +33,7 @@
   "resizeErrors": null,
   "resizeTimeout": "0:15:00",
   "startTask": {
-    "commandLine": "/bin/bash /tmp/start_task.sh",
+    "commandLine": "/bin/bash -c \"wget https://raw.githubusercontent.com/pmav99/posazure/master/start_task.sh -O /tmp/start_task.sh; cat /tmp/start_task.sh; chmod +x /tmp/start_task.sh; /tmp/start_task.sh\"",
     "containerSettings": null,
     "environmentSettings": [
       {
@@ -42,17 +42,7 @@
       }
     ],
     "maxTaskRetryCount": 0,
-    "resourceFiles": [
-      {
-        "autoStorageContainerName": null,
-        "blobPrefix": null,
-        "fileMode": "755",
-        "filePath": "/tmp/start_task.sh",
-        "httpUrl": "https://raw.githubusercontent.com/pmav99/posazure/master/start_task.sh",
-        "identityReference": null,
-        "storageContainerUrl": null
-      }
-    ],
+    "resourceFiles": [],
     "userIdentity": {
       "autoUser": null,
       "userName": "batchadmin"
