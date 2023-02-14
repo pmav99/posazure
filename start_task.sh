@@ -29,8 +29,10 @@ sudo touch /dev/null
 log "Install dependencies"
 sudo apt -yq update
 sudo apt install -yq \
-  silversearcher-ag \
+  kitty-terminfo \
   nfs-common \
+  silversearcher-ag \
+  tree \
 ;
 
 echo
@@ -43,7 +45,7 @@ source ~/miniconda/etc/profile.d/conda.sh
 which conda
 
 log "Setup conda env"
-conda create --quiet --name schism_env "pschism=5.9*=mpi_mpich*"
+conda create --quiet --name schism_env "pschism=5.9*=mpi_openmpi*"
 
 log "Test conda env"
 conda activate schism_env
