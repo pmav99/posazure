@@ -51,12 +51,19 @@ log "Test conda env"
 conda activate schism_env
 which schism
 
-log "Mount Blob over nfs"
-sudo mkdir -p /blob
+# log "Mount Blob over nfs"
+# sudo mkdir -p /blob
 # sudo mount -o sec=sys,vers=3,nolock,proto=tcp sabatchd75dposeidondev.blob.core.windows.net:/sabatchd75dposeidondev/test-nfs /blob
-sudo mount -t nfs -o vers=3,rsize=1048576,wsize=1048576,hard,nolock,proto=tcp,nconnect=8 sabatchd75dposeidondev.blob.core.windows.net:/sabatchd75dposeidondev/test-nfs /blob
-sudo chmod o+rx /blob
-sudo mkdir -p /blob/pool_output
-sudo chown $(id -u):$(id -g) /blob/pool_output
+# sudo mount -t nfs -o vers=3,rsize=1048576,wsize=1048576,hard,nolock,proto=tcp,nconnect=8 sabatchd75dposeidondev.blob.core.windows.net:/sabatchd75dposeidondev/test-nfs /blob
+# sudo chmod o+rx /blob
+# sudo mkdir -p /blob/pool_output
+# sudo chown $(id -u):$(id -g) /blob/pool_output
+
+log "Mount NVME as scratch"
+sudo mdadm --create --verbose /dev/md0  --level=0 --metadata=1.2 --name=NVME_RAID --raid-devices=2 /dev/nvme0n1 /dev/nvme1n1
+sudo mkfs.ext4 -L RAID0 /dev/md0
+sudo mkdir -p /scratch
+sudo mount LABEL=RAID0 /scratch
+sudo chown $(id -u):$(id -g) /scratch
 
 log "END of START_TASK"
